@@ -2,15 +2,17 @@
 using namespace std;
 
 int main() {
-	const int size = 5;
-	int array[size];
+	const int size = 6;
+	int ar[size];
+	cout << "Please, enter the elements: ";
 	for (int i = 0; i < size; i++)
 	{
-		array[i] = i + 1;
+		cin >> ar[i];
 	}
-	for (int i = size - 1; i > -1; i--)
+	cout << "The result is: ";
+	for (int i = size - 1; i >= 0; i--)
 	{
-		cout << array[i] << " ";
+		cout << ar[i] << " ";
 	}
 	return 0;
 }

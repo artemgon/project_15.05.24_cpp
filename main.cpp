@@ -2,21 +2,27 @@
 using namespace std;
 
 int main() {
-	cout << "Please, enter the income of every month:";
-	int month_1, month_2, month_3, month_4, month_5, month_6, month_7, month_8, month_9, month_10, month_11, month_12;
-	cin >> month_1 >> month_2 >> month_3 >> month_4 >> month_5 >> month_6 >> month_7 >> month_8 >> month_9 >> month_10 >> month_11 >> month_12;
-	int array[12] = { month_1, month_2, month_3, month_4, month_5, month_6, month_7, month_8, month_9, month_10, month_11, month_12 };
-	int min, max;
-	min = max = array[0];
-	for (int i = 0; i < 12; i++) {
-		if (array[i] < min) {
-			min = array[i];
+	const int size = 12;
+	int months[size], min, max;
+	cout << "Please, enter the profit in every month of year: ";
+	for (int i = 0; i < size; i++)
+	{
+		cin >> months[i];
+	}
+	max = min = months[0];
+	int max_month = 1, min_month = 1;
+	for (int i = 1; i < size; i++)
+	{
+		if (months[i] < min) {
+			min = months[i];
+			min_month = i + 1;
 		}
-		if (array[i] > max) {
-			max = array[i];
+		if (months[i] > max) {
+			max = months[i];
+			max_month = i + 1;
 		}
 	}
-	cout << "Min: " << min << endl;
-	cout << "Max: " << max << endl;
+	cout << "Max: " << max_month << "th month";
+	cout << "\nMin: " << min_month << "th month";
 	return 0;
 }
